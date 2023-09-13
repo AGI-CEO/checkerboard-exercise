@@ -4,6 +4,13 @@ container.style.flexWrap = "wrap";
 container.style.width = "800px";
 container.style.height = "800px";
 
+function randomColor() {
+  const r = Math.floor(Math.random() * 256);
+  const g = Math.floor(Math.random() * 256);
+  const b = Math.floor(Math.random() * 256);
+  return `rgb(${r}, ${g}, ${b})`;
+}
+
 for (let i = 0; i < 64; i++) {
   const tile = document.createElement("div");
   tile.style.height = "12.5%";
@@ -15,14 +22,14 @@ for (let i = 0; i < 64; i++) {
     (i >= 56 && i < 64)
   ) {
     if (i % 2 === 0) {
-      tile.style.background = "black";
+      tile.style.background = randomColor();
     } else {
-      tile.style.background = "red";
+      tile.style.background = randomColor();
     }
   } else if (i % 2 === 0) {
-    tile.style.background = "red";
+    tile.style.background = randomColor();
   } else {
-    tile.style.background = "black";
+    tile.style.background = randomColor();
   }
   container.append(tile);
 }
