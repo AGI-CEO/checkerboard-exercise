@@ -13,8 +13,8 @@ for (let i = 0; i < 64; i++) {
   const row = Math.floor(i / 8);
   const col = i % 8;
 
-  const red = Math.floor((row / 7) * 255);
-  const blue = Math.floor((col / 7) * 255);
+  const red = Math.floor((row / 7) * 200);
+  const blue = Math.floor((col / 7) * 200);
   tile.style.background = `rgb(${red}, 0, ${blue})`;
   tile.style.border = "1px solid black";
 
