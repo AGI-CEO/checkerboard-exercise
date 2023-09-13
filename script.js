@@ -13,11 +13,21 @@ for (let i = 0; i < 64; i++) {
   const row = Math.floor(i / 8);
   const col = i % 8;
 
-  const red = Math.floor((row / 7) * 200);
-  const blue = Math.floor((col / 7) * 200);
-  tile.style.background = `rgb(${red}, 0, ${blue})`;
+  let red = Math.floor((row / 7) * 255);
+  let blue = Math.floor((col / 7) * 255);
+
+  if ((row + col) % 2 === 0) {
+    red = Math.min(255, red + 50);
+  } else {
+    red = Math.max(0, red - 50);
+  }
+
+  blue = Math.max(0, blue);
+
+  tile.style.background = `rgb(${blue}, 0, ${red})`;
   tile.style.border = "1px solid black";
 
   container.append(tile);
 }
+
 document.body.append(container);
